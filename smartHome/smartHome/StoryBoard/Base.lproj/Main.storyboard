@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hw2-aE-li1">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Smart Home Table View Controller-->
+        <scene sceneID="FR7-vY-fvv">
+            <objects>
+                <tableViewController id="Suw-SG-ZsH" customClass="SmartHomeTableViewController" customModule="smartHome" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="pYH-vc-m8T">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="smartHomeCell" rowHeight="100" id="Ujv-xQ-Jj0" customClass="SmartHomeTableViewCell" customModule="smartHome" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ujv-xQ-Jj0" id="lug-sx-U5x" customClass="SmartHomeTableViewCell" customModule="smartHomeCell">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWR-hG-fLL">
+                                            <rect key="frame" x="27" y="40" width="102" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="60c-bu-xRh">
+                                            <rect key="frame" x="318" y="30" width="51" height="30"/>
+                                            <connections>
+                                                <action selector="smartHomeSwitch:" destination="Ujv-xQ-Jj0" eventType="valueChanged" id="EFn-aT-xdo"/>
+                                            </connections>
+                                        </switch>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="EWR-hG-fLL" firstAttribute="top" secondItem="lug-sx-U5x" secondAttribute="topMargin" constant="29" id="LTx-Hk-xzV"/>
+                                        <constraint firstItem="EWR-hG-fLL" firstAttribute="leading" secondItem="lug-sx-U5x" secondAttribute="leadingMargin" constant="7" id="Vbe-Lq-4co"/>
+                                        <constraint firstItem="60c-bu-xRh" firstAttribute="top" secondItem="lug-sx-U5x" secondAttribute="topMargin" constant="19" id="YJo-uN-BbA"/>
+                                        <constraint firstItem="60c-bu-xRh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="EWR-hG-fLL" secondAttribute="trailing" constant="8" symbolic="YES" id="idj-di-4bx"/>
+                                        <constraint firstItem="EWR-hG-fLL" firstAttribute="bottom" secondItem="60c-bu-xRh" secondAttribute="bottom" id="oVK-hh-5Io"/>
+                                        <constraint firstItem="EWR-hG-fLL" firstAttribute="centerY" secondItem="lug-sx-U5x" secondAttribute="centerY" id="sdI-hH-VOs"/>
+                                        <constraint firstItem="60c-bu-xRh" firstAttribute="trailing" secondItem="lug-sx-U5x" secondAttribute="trailingMargin" id="wVR-7Q-1vf"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="deviceNameLabel" destination="EWR-hG-fLL" id="yUT-fN-uo8"/>
+                                    <outlet property="smartHomeSwitch" destination="60c-bu-xRh" id="1U7-Se-jqH"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Suw-SG-ZsH" id="CGN-3L-w6k"/>
+                            <outlet property="delegate" destination="Suw-SG-ZsH" id="wki-wB-Arh"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="y4N-Kn-K0j">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Sip-Pi-Z8b">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="Suw-SG-ZsH" id="nYh-XS-v55"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WIu-9N-DZp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="898.47328244274809" y="-22.535211267605636"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="45B-F2-5IJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hw2-aE-li1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vZk-Nm-ltF">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Suw-SG-ZsH" kind="relationship" relationship="rootViewController" id="h8T-DX-gfp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rLP-We-qZM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-28.244274809160306" y="-22.535211267605636"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
