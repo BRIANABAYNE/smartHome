@@ -16,6 +16,8 @@
 		3AF2606F2A3115900024E745 /* SmartHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2606E2A3115900024E745 /* SmartHomeController.swift */; };
 		3AF260712A311F5F0024E745 /* SmartHomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF260702A311F5F0024E745 /* SmartHomeTableViewController.swift */; };
 		3AF260732A3126620024E745 /* SmartHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF260722A3126620024E745 /* SmartHomeTableViewCell.swift */; };
+		3AF2609B2A3255500024E745 /* ToggleAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2609A2A3255500024E745 /* ToggleAllViewController.swift */; };
+		3AF2609D2A3256340024E745 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2609C2A3256340024E745 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		3AF2606E2A3115900024E745 /* SmartHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartHomeController.swift; sourceTree = "<group>"; };
 		3AF260702A311F5F0024E745 /* SmartHomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartHomeTableViewController.swift; sourceTree = "<group>"; };
 		3AF260722A3126620024E745 /* SmartHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartHomeTableViewCell.swift; sourceTree = "<group>"; };
+		3AF2609A2A3255500024E745 /* ToggleAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ToggleAllViewController.swift; path = ../../../ToggleAllViewController.swift; sourceTree = "<group>"; };
+		3AF2609C2A3256340024E745 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../../../Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 				3AF260502A30FB6F0024E745 /* SceneDelegate.swift */,
 				3AF260572A30FB700024E745 /* Assets.xcassets */,
 				3AF2605C2A30FB700024E745 /* Info.plist */,
+				3AF2609C2A3256340024E745 /* Constants.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -83,6 +88,7 @@
 			children = (
 				3AF260702A311F5F0024E745 /* SmartHomeTableViewController.swift */,
 				3AF260722A3126620024E745 /* SmartHomeTableViewCell.swift */,
+				3AF2609A2A3255500024E745 /* ToggleAllViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -188,11 +194,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AF260712A311F5F0024E745 /* SmartHomeTableViewController.swift in Sources */,
+				3AF2609B2A3255500024E745 /* ToggleAllViewController.swift in Sources */,
 				3AF2606F2A3115900024E745 /* SmartHomeController.swift in Sources */,
 				3AF2606C2A31121B0024E745 /* SmartHouseModel.swift in Sources */,
 				3AF2604F2A30FB6F0024E745 /* AppDelegate.swift in Sources */,
 				3AF260732A3126620024E745 /* SmartHomeTableViewCell.swift in Sources */,
 				3AF260512A30FB6F0024E745 /* SceneDelegate.swift in Sources */,
+				3AF2609D2A3256340024E745 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

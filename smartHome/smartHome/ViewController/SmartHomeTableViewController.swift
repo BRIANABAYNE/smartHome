@@ -8,10 +8,14 @@
 import UIKit
 
 class SmartHomeTableViewController: UITableViewController {
-
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+         notificationCenter()
+            
+        
     }
 
     // MARK: - Table view data source
@@ -29,8 +33,7 @@ class SmartHomeTableViewController: UITableViewController {
         
         let smartHome = SmartHomeController.shared.smartHomes[indexPath.row]
         cell.updateUI(smartHome: smartHome)
-        // step 4
-//        cell.delegate = self
+        cell.delegate = self
 
         return cell
     }
@@ -44,6 +47,21 @@ class SmartHomeTableViewController: UITableViewController {
     }
     
     // MARK: - Functions
+    
+    @objc func turnAllOn() {
+        SmartHomeController.shared.toggleAllDevicesON()
+        tableView.reloadData()
+    }
+    @objc func turnAllOff() {
+        SmartHomeController.shared.toggleAllDevicesOff()
+        tableView.reloadData()
+    }
+    
+    func notificationCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(turnAllOn), name: Constants.Notifications.turnAllOn, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(turnAllOff), name: Constants.Notifications.turnAllOff,object: nil)
+    }
+    
     func presentAddNewDeviceAlert() {
         let alert = UIAlertController(title:"New Device", message: "Enter the name of your Device below", preferredStyle: .alert)
         alert.addTextField { textField in
@@ -73,4 +91,11 @@ class SmartHomeTableViewController: UITableViewController {
 }
 
 // MARK: - Extensions
-// step 5
+extension SmartHomeTableViewController: SmartHomeTablewViewCellDelegate {
+    func smartHomeSwitch(cell: SmartHomeTableViewCell) {
+        guard let indexPath = tableView.indexPath(for:cell ) else { return }
+        let smartHome = SmartHomeController.shared.smartHomes[indexPath.row]
+        SmartHomeController.shared.toggleIsON(smartHome: smartHome)
+        cell.updateUI(smartHome: smartHome)
+    }
+}

@@ -17,8 +17,17 @@ class SmartHomeController {
         load()
     }
     
-    
     // MARK: - Functions
+    
+    func toggleAllDevicesON() {
+        smartHomes.forEach { $0.isOn = true  }
+        save()
+    }
+    
+    func toggleAllDevicesOff() {
+        smartHomes.forEach { $0.isOn = false}
+        save()
+    }
     
     func createSmartHome(name: String) {
         let smartHome = SmartHome(name:name)

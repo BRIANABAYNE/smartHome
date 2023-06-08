@@ -9,7 +9,6 @@ import UIKit
 
 // MARK: - Protocol
 
-
 protocol SmartHomeTablewViewCellDelegate: AnyObject {
     func smartHomeSwitch(cell: SmartHomeTableViewCell)
 }
@@ -28,8 +27,8 @@ class SmartHomeTableViewCell: UITableViewCell {
         deviceNameLabel.text = smartHome.name
         smartHomeSwitch.isOn = smartHome.isOn
         
+
     }
-    
     
     // MARK: - Actions
     @IBAction func smartHomeSwitch(_ sender: Any) {
