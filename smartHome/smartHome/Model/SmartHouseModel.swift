@@ -12,18 +12,16 @@ class SmartHome: Codable {
     let name: String
     var isOn: Bool
     let uuid: UUID
-
-    init(name: String, isOn: Bool = false, uuid: UUID = UUID()) {
     
-    self.name = name
-    self.isOn = isOn
-    self.uuid = uuid
-}
-
+    init(name: String, isOn: Bool = false, uuid: UUID = UUID()) {
+        self.name = name
+        self.isOn = isOn
+        self.uuid = uuid
+    }
+    
 }
 
 // MARK: - Extention
-
 extension SmartHome: Equatable {
     static func == (lhs: SmartHome, rhs: SmartHome) -> Bool {
         return lhs.uuid == rhs.uuid

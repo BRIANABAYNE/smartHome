@@ -33,7 +33,7 @@
 		3AF260702A311F5F0024E745 /* SmartHomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartHomeTableViewController.swift; sourceTree = "<group>"; };
 		3AF260722A3126620024E745 /* SmartHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartHomeTableViewCell.swift; sourceTree = "<group>"; };
 		3AF2609A2A3255500024E745 /* ToggleAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ToggleAllViewController.swift; path = ../../../ToggleAllViewController.swift; sourceTree = "<group>"; };
-		3AF2609C2A3256340024E745 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../../../Constants.swift; sourceTree = "<group>"; };
+		3AF2609C2A3256340024E745 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,10 +47,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A5BCCA02B06B1D30093AF12 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				3AF2609C2A3256340024E745 /* Constants.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		3AF260422A30FB6F0024E745 = {
 			isa = PBXGroup;
 			children = (
 				3AF260752A3139BA0024E745 /* smartHome */,
+				3A5BCCA02B06B1D30093AF12 /* Helper */,
+				3AF260682A31113A0024E745 /* StoryBoard */,
 				3AF2604C2A30FB6F0024E745 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,7 +88,6 @@
 				3AF260502A30FB6F0024E745 /* SceneDelegate.swift */,
 				3AF260572A30FB700024E745 /* Assets.xcassets */,
 				3AF2605C2A30FB700024E745 /* Info.plist */,
-				3AF2609C2A3256340024E745 /* Constants.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -114,9 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				3AF260652A3110C30024E745 /* SupportingFiles */,
-				3AF2606D2A3115680024E745 /* ModelControllers */,
 				3AF260622A31108C0024E745 /* Model */,
-				3AF260682A31113A0024E745 /* StoryBoard */,
+				3AF2606D2A3115680024E745 /* ModelControllers */,
 				3AF260672A3111040024E745 /* ViewController */,
 			);
 			path = smartHome;

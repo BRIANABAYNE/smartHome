@@ -47,7 +47,6 @@ class SmartHomeController {
     }
     
     // MARK: - Persistence
-    // writing
     func save() {
         guard let url = fileURL else {return}
         do {
@@ -65,7 +64,7 @@ class SmartHomeController {
             let smartHomes = try JSONDecoder().decode([SmartHome].self, from: data)
             self.smartHomes = smartHomes
         } catch {
-            print(error)
+            print("Load didn't work.")
         }
     }
     
@@ -76,5 +75,3 @@ class SmartHomeController {
         return url
     }
 }
-
-

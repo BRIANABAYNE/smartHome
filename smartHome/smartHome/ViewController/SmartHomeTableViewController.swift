@@ -12,29 +12,26 @@ class SmartHomeTableViewController: UITableViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-         notificationCenter()
-            
-        
+        notificationCenter()
     }
-
+    
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return SmartHomeController.shared.smartHomes.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "smartHomeCell", for: indexPath) as?
-        SmartHomeTableViewCell else { return UITableViewCell() }
+                SmartHomeTableViewCell else { return UITableViewCell() }
         
         let smartHome = SmartHomeController.shared.smartHomes[indexPath.row]
         cell.updateUI(smartHome: smartHome)
         cell.delegate = self
-
+        
         return cell
     }
     
@@ -61,6 +58,8 @@ class SmartHomeTableViewController: UITableViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(turnAllOn), name: Constants.Notifications.turnAllOn, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(turnAllOff), name: Constants.Notifications.turnAllOff,object: nil)
     }
+    
+    // MARK: - Alert
     
     func presentAddNewDeviceAlert() {
         let alert = UIAlertController(title:"New Device", message: "Enter the name of your Device below", preferredStyle: .alert)
@@ -90,7 +89,7 @@ class SmartHomeTableViewController: UITableViewController {
     }
 }
 
-// MARK: - Extensions
+// MARK: - Extension
 extension SmartHomeTableViewController: SmartHomeTablewViewCellDelegate {
     func smartHomeSwitch(cell: SmartHomeTableViewCell) {
         guard let indexPath = tableView.indexPath(for:cell ) else { return }

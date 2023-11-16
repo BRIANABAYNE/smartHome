@@ -26,8 +26,6 @@ class SmartHomeTableViewCell: UITableViewCell {
     func updateUI(smartHome: SmartHome) {
         deviceNameLabel.text = smartHome.name
         smartHomeSwitch.isOn = smartHome.isOn
-        
-
     }
     
     // MARK: - Actions
